@@ -1,21 +1,25 @@
+/* Parallaxer Styles */
+.viewport {position: relative; overflow: hidden;}
+.stage {position: absolute; top: 0; left: 0; right: 0; bottom: 0; -webkit-transform-style: preserve-3d;}
+.stage .layer {position: absolute; top: 0; left: 50%; background-repeat: no-repeat; background-position: top left; -webkit-transform-style: preserve-3d;}
+
+/* Demo Styles */
 html {background: #1C2C45;}
 
+#viewport {position: absolute; top: 0; left: 0; right: 0; bottom: 0; -webkit-perspective: 100;}
+
+#stage1 div.layer {margin-left: -879px; width: 1758px; height: 699px;}
+#stage1 a.layer {display: block; top: 200px; margin-left: 250px; width: 193px; height: 162px;}
+#stage1 #stars {background-image: url(img/stars.png); -webkit-transform: scale(4) translate3d(0, 0, -300px);}
+#stage1 #gas {background-image: url(img/gas.png); -webkit-transform: scale(3) translate3d(0, 0, -200px);}
+#stage1 #planets {background-image: url(img/planets.png); -webkit-transform: scale(2) translate3d(0, 0, -100px);}
 @-webkit-keyframes float {
     0% {margin-top: 0; margin-left: 250px;}
     25% {margin-left: 255px;}
     50% {margin-left: 250px;}
     100% {margin-top: 20px; margin-left: 255px;}
 }
-
-#viewport {/*z-index: -1;*/ position: absolute; top: 0; left: 0; right: 0; bottom: 0; overflow: hidden; -webkit-perspective: 100;}
-#stage {-webkit-transform: translate3d(0, 0, 0); position: absolute; top: 0; left: 0; width: 100%; height: 100%; -webkit-transform-style: preserve-3d;}
-#stage .layer {position: absolute; top: 0; left: 50%; background-repeat: repeat; background-position: top left; -webkit-transform-style: preserve-3d;}
-#stage div.layer {margin-left: -879px; width: 1758px; height: 800px;}
-#stage a.layer {display: block; top: 200px; margin-left: 250px; width: 193px; height: 162px;}
-#stage #stars {background-image: url(img/stars.png); -webkit-transform: scale(4) translate3d(0, 0, -300px);}
-#stage #gas {background-image: url(img/gas.png); -webkit-transform: scale(3) translate3d(0, 0, -200px);}
-#stage #planets {background-image: url(img/planets.png); -webkit-transform: scale(2) translate3d(0, 0, -100px);}
-#stage #hypernaut {background-image: url(img/hypernaut.png); -webkit-transform: translate3d(0, 0, 0); -webkit-animation: float 3s linear infinite alternate; z-index: -3;}
+#stage1 #hypernaut {background-image: url(img/hypernaut.png); -webkit-transform: translate3d(0, 0, 0); -webkit-animation: float 3s linear infinite alternate;}
 
 /*#viewport:hover #hypernaut {-webkit-transform: translate3d(0, 0, 10px);}*/
-#content {max-width: 470px; min-height: 400px;  margin: 100px auto; background: #D9D9B8; border-radius: 10px; z-index: 1;}
+#content {max-width: 470px; min-height: 400px;  margin: 100px auto; background: #D9D9B8; border-radius: 10px; -webkit-transform: translate3d(0, 0, -100px); -webkit-perspective: 100;}
