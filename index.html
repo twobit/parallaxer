@@ -16,10 +16,11 @@
 
         <div id="content"></div>
 
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
         <script type="text/javascript" src="js/parallaxer.js"></script>
         <script type="text/javascript">
         $(document).ready(function() {
-            new Parallaxer($('#stage').get(0));
+            new Parallaxer(document.getElementById('stage'));
         });
         </script>
     </body>
