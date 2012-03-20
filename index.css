@@ -6,7 +6,7 @@
 /* Demo Styles */
 html {background: #1C2C45;}
 
-#viewport {position: absolute; top: 0; left: 0; right: 0; bottom: 0; -webkit-perspective: 100;}
+#viewport1 {position: absolute; top: 0; left: 0; right: 0; bottom: 0; -webkit-perspective: 100;}
 
 #stage1 div.layer {margin-left: -879px; width: 1758px; height: 699px;}
 #stage1 a.layer {display: block; top: 200px; margin-left: 250px; width: 193px; height: 162px;}
@@ -22,4 +22,4 @@ html {background: #1C2C45;}
 #stage1 #hypernaut {background-image: url(img/hypernaut.png); -webkit-transform: translate3d(0, 0, 0); -webkit-animation: float 3s linear infinite alternate;}
 
 /*#viewport:hover #hypernaut {-webkit-transform: translate3d(0, 0, 10px);}*/
-#content {max-width: 470px; min-height: 400px;  margin: 100px auto; background: #D9D9B8; border-radius: 10px; -webkit-transform: translate3d(0, 0, -100px); -webkit-perspective: 100;}
+#content {position: relative; max-width: 470px; min-height: 400px;  margin: 100px auto; background: #D9D9B8; border-radius: 10px;}
