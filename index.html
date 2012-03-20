@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Parallaxer</title>
+        <link rel="stylesheet" type="text/css" href="index.css" />
+    </head>
+    <body>
+        <div id="viewport">
+            <div id="stage">
+                <div id="stars" class="layer"></div>
+                <div id="gas" class="layer"></div>
+                <div id="planets" class="layer"></div>
+                <a id="hypernaut" href="#" class="layer"></a>
+            </div>
+        </div>
+
+        <div id="content"></div>
+
+        <script type="text/javascript" src="js/parallaxer.js"></script>
+        <script type="text/javascript">
+        $(document).ready(function() {
+            new Parallaxer($('#stage').get(0));
+        });
+        </script>
+    </body>
+</html>
