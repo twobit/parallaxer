@@ -1,5 +1,3 @@
-
-
 html {background: #1C2C45;}
 
 @-webkit-keyframes float {
@@ -13,7 +11,7 @@ html {background: #1C2C45;}
 #stage {-webkit-transform: translate3d(0, 0, 0); position: absolute; top: 0; left: 0; width: 100%; height: 100%; -webkit-transform-style: preserve-3d;}
 #stage .layer {position: absolute; top: 0; left: 50%; background-repeat: repeat; background-position: top left; -webkit-transform-style: preserve-3d;}
 #stage div.layer {margin-left: -879px; width: 1758px; height: 800px;}
-#stage a.layer {display: block; top: 100px; margin-left: 250px; width: 193px; height: 162px;}
+#stage a.layer {display: block; top: 200px; margin-left: 250px; width: 193px; height: 162px;}
 #stage #stars {background-image: url(img/stars.png); -webkit-transform: scale(4) translate3d(0, 0, -300px);}
 #stage #gas {background-image: url(img/gas.png); -webkit-transform: scale(3) translate3d(0, 0, -200px);}
 #stage #planets {background-image: url(img/planets.png); -webkit-transform: scale(2) translate3d(0, 0, -100px);}
