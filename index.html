@@ -14,13 +14,23 @@
             </div>
         </div>
 
-        <div id="content"></div>
+        <div id="content">
+            <div id="viewport2" class="viewport">
+                <div id="stage2" class="stage">
+                    <div id="stars2" class="layer"></div>
+                    <div id="gas2" class="layer"></div>
+                    <div id="planets2" class="layer"></div>
+                    <a id="hypernaut2" href="#" class="layer"></a>
+                </div>
+            </div>
+        </div>
 
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
         <script type="text/javascript" src="js/parallaxer.js"></script>
         <script type="text/javascript">
         $(document).ready(function() {
             new Parallaxer(document.getElementById('stage1'));
+            new Parallaxer(document.getElementById('stage2'), .9, .9);
         });
         </script>
     </body>
