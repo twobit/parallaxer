@@ -29,8 +29,8 @@
         <script type="text/javascript" src="js/parallaxer.js"></script>
         <script type="text/javascript">
         $(document).ready(function() {
-            new Parallaxer(document.getElementById('stage1'));
-            new Parallaxer(document.getElementById('stage2'), .9, .9);
+            new Parallaxer(document.getElementById('stage1'), {invert: true});
+            new Parallaxer(document.getElementById('stage2'), {xRange: 400, yRange: 400});
         });
         </script>
     </body>
