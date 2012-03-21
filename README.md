@@ -23,8 +23,8 @@ Takes advantage of CSS3 3D transforms to create a real parallax effect. Responds
 ```
 
 ```javascript
-    new Parallaxer(document.getElementById('stage1'), {invert: true});
-    new Parallaxer(document.getElementById('stage2'), {xRange: 400, yRange: 400});
+new Parallaxer(document.getElementById('stage1'), {invert: true});
+new Parallaxer(document.getElementById('stage2'), {xRange: 400, yRange: 400});
 ```
 
 ## Documentation
@@ -46,8 +46,8 @@ __Arguments__
 __Example__
 
 ```javascript
-    new Parallaxer(document.getElementById('stage1'), {invert: true});
-    new Parallaxer(document.getElementById('stage2'), {xRange: 400, yRange: 400});
+new Parallaxer(document.getElementById('stage1'), {invert: true});
+new Parallaxer(document.getElementById('stage2'), {xRange: 400, yRange: 400});
 ```
 
 ## Browser Support
