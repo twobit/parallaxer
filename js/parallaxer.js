@@ -12,6 +12,8 @@
         this._lastCursor = null;
 
         if (window.DeviceMotionEvent) {
+            this._ax = this._ay = 0.0;
+            setInterval(this._onDeviceMotionRender.bind(this));
             window.addEventListener('devicemotion', this._onDeviceMotion.bind(this), true);
         }
         else {
@@ -27,12 +29,25 @@
 
     Parallaxer.prototype = {
         _onDeviceMotion: function(e) {
-            var accel = e.accelerationIncludingGravity;
-                ax = accel.y / 10; // Normalize acceleration
-                ay = accel.x / 10;
+            var accel = e.accelerationIncludingGravity, ax, ay;
 
-            var x = this._inversion * ax * this._range.x,
-                y = this._inversion * ay * this._range.y;
+            if (window.innerHeight > window.innerWidth) {
+                ax = accel.x,
+                ay = accel.y;
+            }
+            else {
+                ax = accel.y;
+                ay = accel.x;
+            }
+
+            // Normalize acceleration
+            this._ax = ax / 9.81;
+            this._ay = ay / 9.81;
+        },
+
+        _onDeviceMotionRender: function() {
+            var x = this._inversion * this._ax * this._range.x,
+                y = this._inversion * this._ay * this._range.y;
 
             this._stage.style.WebkitTransform = 'translate3d(' + x + 'px,' + y + 'px, 0)';
         },
