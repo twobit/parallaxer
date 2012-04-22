@@ -11,13 +11,15 @@
         this._transitioning = false;
         this._lastCursor = null;
 
+        var self = this;
+
         if (window.DeviceMotionEvent) {
             this._ax = this._ay = 0.0;
             setInterval(this._onDeviceMotionRender.bind(this));
-            window.addEventListener('devicemotion', this._onDeviceMotion.bind(this), true);
+            window.addEventListener('devicemotion', function(e) {self._onDeviceMotion(e);}, true);
         }
         else {
-            window.addEventListener('mousemove', this._onMouseMove.bind(this), true);
+            window.addEventListener('mousemove', function(e) {self._onMouseMove(e);}, true);
         }
     }
 
@@ -55,7 +57,8 @@
         _transition: function() {
             this._transitioning = true;
             this._stage.style.WebkitTransition = Parallaxer.TRANSITION;
-            window.addEventListener('webkitTransitionEnd', this._onEndTransition.bind(this), true);
+            var self = this;
+            window.addEventListener('webkitTransitionEnd', function(e) {self._onEndTransition(e);}, true);
         },
 
         _onEndTransition: function() {
@@ -84,51 +87,6 @@
             this._lastCursor = {x: e.clientX, y: e.clientY};
         }
     };
-
-    // Taken from ES5-shim https://github.com/kriskowal/es5-shim/blob/master/es5-shim.js
-    // ES-5 15.3.4.5
-    // http://es5.github.com/#x15.3.4.5
-    if (!Function.prototype.bind) {
-      Function.prototype.bind = function bind(that) {
-        
-        var target = this;
-        
-        if (typeof target != "function") {
-            throw new TypeError();
-        }
-        
-        var args = Array.prototype.slice.call(arguments, 1),
-            bound = function () {
-
-            if (this instanceof bound) {
-              
-              var F = function(){};
-              F.prototype = target.prototype;
-              var self = new F();
-
-              var result = target.apply(
-                  self,
-                  args.concat(Array.prototype.slice.call(arguments))
-              );
-              if (Object(result) === result) {
-                  return result;
-              }
-              return self;
-
-            } else {
-              
-              return target.apply(
-                  that,
-                  args.concat(Array.prototype.slice.call(arguments))
-              );
-
-            }
-
-        };
-        
-        return bound;
-      };
-    }
 
     window.Parallaxer = Parallaxer;
 })(window);
