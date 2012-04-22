@@ -25,7 +25,6 @@ html {background: #1C2C45;}
 /*#viewport:hover #hypernaut {-webkit-transform: translate3d(0, 0, 10px);}*/
 #content {position: relative; max-width: 470px; min-height: 400px;  margin: 100px auto; background: #D9D9B8; border-radius: 10px; padding: 10px;}
 
-
 /* Viewport 2 */
 #viewport2 {background: #1C2C45; height: 150px; -webkit-perspective: 100;}
 #stage2 .layer {margin-left: -879px; width: 1758px; height: 699px;}
