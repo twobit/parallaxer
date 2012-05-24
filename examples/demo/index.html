@@ -5,32 +5,32 @@
         <link rel="stylesheet" type="text/css" href="index.css" />
     </head>
     <body>
-        <div id="viewport1" class="viewport">
-            <div id="stage1" class="stage">
-                <div id="stars" class="layer"></div>
-                <div id="gas" class="layer"></div>
-                <div id="planets" class="layer"></div>
-                <a id="hypernaut" href="#" class="layer"></a>
+        <div id="viewport" class="viewport">
+            <div id="stage" class="stage">
+                <div class="red layer"></div>
+                <div class="green layer"></div>
+                <div class="blue layer"></div>
             </div>
         </div>
 
-        <div id="content">
-            <div id="viewport2" class="viewport">
-                <div id="stage2" class="stage">
-                    <div id="stars2" class="layer"></div>
-                    <div id="gas2" class="layer"></div>
-                    <div id="planets2" class="layer"></div>
-                    <a id="hypernaut2" href="#" class="layer"></a>
+        <div id="nested">
+            <div id="nested_viewport" class="viewport">
+                <div id="nested_stage" class="stage">
+                    <div class="red layer"></div>
+                    <div class="green layer"></div>
+                    <div class="blue layer"></div>
                 </div>
             </div>
+
+            <p>Nested Parallax</p>
         </div>
 
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
         <script type="text/javascript" src="../../parallaxer.js"></script>
         <script type="text/javascript">
         $(document).ready(function() {
-            new Parallaxer(document.getElementById('stage1'), {invert: true});
-            new Parallaxer(document.getElementById('stage2'), {xRange: 400, yRange: 400});
+            new Parallaxer(document.getElementById('stage'), {invert: true});
+            new Parallaxer(document.getElementById('nested_stage'), {xRange: 400, yRange: 400});
         });
         </script>
     </body>

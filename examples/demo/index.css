@@ -1,34 +1,17 @@
-/* Parallaxer Styles */
+/* Required Parallaxer Styles */
 .viewport {position: relative; overflow: hidden;}
 .stage {position: absolute; top: 0; left: 0; right: 0; bottom: 0; -webkit-transform-style: preserve-3d;}
 .stage .layer {position: absolute; top: 0; left: 50%; background-repeat: no-repeat; background-position: top left; -webkit-transform-style: preserve-3d;}
 
 /* Demo Styles */
-* {-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;}
-html {background: #1C2C45;}
+#viewport {position: absolute; top: 0; left: 0; right: 0; bottom: 0; -webkit-perspective: 100;}
+#stage .layer {margin-left: -1000px; width: 2000px; height: 2000px;}
 
-/* Viewport 1 */
-#viewport1 {position: absolute; top: 0; left: 0; right: 0; bottom: 0; -webkit-perspective: 100;}
-#stage1 div.layer {margin-left: -879px; width: 1758px; height: 699px;}
-#stage1 a.layer {display: block; top: 200px; margin-left: 250px; width: 193px; height: 162px;}
-#stage1 #stars {background-image: url(img/stars.png); -webkit-transform: scale(4) translate3d(0, 0, -300px);}
-#stage1 #gas {background-image: url(img/gas.png); -webkit-transform: scale(3) translate3d(0, 0, -200px);}
-#stage1 #planets {background-image: url(img/planets.png); -webkit-transform: scale(2) translate3d(0, 0, -100px);}
-@-webkit-keyframes float {
-    0% {margin-top: 0; margin-left: 250px;}
-    25% {margin-left: 255px;}
-    50% {margin-left: 250px;}
-    100% {margin-top: 20px; margin-left: 255px;}
-}
-#stage1 #hypernaut {background-image: url(img/hypernaut.png); -webkit-transform: translate3d(0, 0, 0); -webkit-animation: float 3s linear infinite alternate;}
+.red {background-image: url(img/red.png); -webkit-transform: scale(4) translate3d(0, 0, -300px);}
+.green {background-image: url(img/green.png); -webkit-transform: scale(3) translate3d(0, 0, -200px);}
+.blue {background-image: url(img/blue.png); -webkit-transform: scale(2) translate3d(0, 0, -100px);}
 
-/*#viewport:hover #hypernaut {-webkit-transform: translate3d(0, 0, 10px);}*/
-#content {position: relative; max-width: 470px; min-height: 400px;  margin: 100px auto; background: #D9D9B8; border-radius: 10px; padding: 10px;}
-
-/* Viewport 2 */
-#viewport2 {background: #1C2C45; height: 150px; -webkit-perspective: 100;}
-#stage2 .layer {margin-left: -879px; width: 1758px; height: 699px;}
-#stage2 #stars2 {background-image: url(img/stars.png); -webkit-transform: scale(4) translate3d(0, 0, -300px);}
-#stage2 #gas2 {background-image: url(img/gas.png); -webkit-transform: scale(3) translate3d(0, 0, -200px);}
-#stage2 #planets2 {background-image: url(img/planets.png); -webkit-transform: scale(2) translate3d(0, 0, -100px);}
-#stage2 #hypernaut2 {background-image: url(img/hypernaut.png); -webkit-transform: translate3d(0, 0, 0); margin-top: 0; margin-left: 250px;}
+/* Nested Parallax */
+#nested {position: relative; margin: 100px auto; width: 900px; background: #DDD; border-radius: 10px; padding: 10px; border: 1px solid #AAA;}
+#nested_viewport {background: #FFF; height: 150px; -webkit-perspective: 100;}
+#nested_stage .layer {margin-left: -1000px; width: 2000px; height: 2000px;}

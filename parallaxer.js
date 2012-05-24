@@ -14,9 +14,12 @@
         var self = this;
 
         if (window.DeviceMotionEvent) {
+            /*
+            TODO: Improve device motion support
             this._ax = this._ay = 0.0;
             setInterval(this._onDeviceMotionRender.bind(this));
             window.addEventListener('devicemotion', function(e) {self._onDeviceMotion(e);}, true);
+            */
         }
         else {
             window.addEventListener('mousemove', function(e) {self._onMouseMove(e);}, true);
