@@ -24,7 +24,7 @@ Add styling:
 /* Required Parallaxer Styles */
 .viewport {position: relative; overflow: hidden;}
 .stage {position: absolute; top: 0; left: 0; right: 0; bottom: 0; transform-style: preserve-3d; -webkit-transform-style: preserve-3d; -moz-transform-style: preserve-3d;}
-.stage .layer {position: absolute; top: 0; left: 50%; background-repeat: no-repeat; background-position: top left; transform-style: preserve-3d; -webkit-transform-style: preserve-3d; -moz-transform-style: preserve-3d;}
+.stage .layer {position: absolute; top: 0; left: 50%; background-repeat: no-repeat; background-position: top left; transform-style: preserve-3d; -webkit-transform-style: preserve-3d;}
 
 /* Demo Styles */
 #viewport {position: absolute; top: 0; left: 0; right: 0; bottom: 0; perspective: 100px; -webkit-perspective: 100px; -moz-perspective: 100px;}
