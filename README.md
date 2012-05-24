@@ -70,3 +70,7 @@ new Parallaxer(document.getElementById('stage'), {xRange: 400, yRange: 400});
 Requires CSS3 transform support. [When can I use CSS3 transforms?](http://caniuse.com/transforms3d)
 
 Tested in WebKit and Firefox.
+
+## Todo
+
+ * Set required CSS styles in JS
