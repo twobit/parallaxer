@@ -13,17 +13,16 @@
 
         var self = this;
 
+        /*
+        TODO: Improve device motion support
         if (window.DeviceMotionEvent) {
-            /*
-            TODO: Improve device motion support
             this._ax = this._ay = 0.0;
             setInterval(this._onDeviceMotionRender.bind(this));
             window.addEventListener('devicemotion', function(e) {self._onDeviceMotion(e);}, true);
-            */
         }
         else {
-            window.addEventListener('mousemove', function(e) {self._onMouseMove(e);}, true);
-        }
+        }*/
+        window.addEventListener('mousemove', function(e) {self._onMouseMove(e);}, true);
     }
 
     Parallaxer.X_RANGE = 50; // Max distance in x direction
@@ -54,18 +53,26 @@
             var x = this._inversion * this._ax * this._range.x,
                 y = this._inversion * this._ay * this._range.y;
 
+            this._stage.style.transform = 'translate3d(' + x + 'px,' + y + 'px, 0)';
             this._stage.style.WebkitTransform = 'translate3d(' + x + 'px,' + y + 'px, 0)';
+            this._stage.style.MozTransform = 'translate3d(' + x + 'px,' + y + 'px, 0)';
         },
 
         _transition: function() {
             this._transitioning = true;
+            this._stage.style.transition = Parallaxer.TRANSITION;
             this._stage.style.WebkitTransition = Parallaxer.TRANSITION;
+            this._stage.style.MozTransition = Parallaxer.TRANSITION;
             var self = this;
+            window.addEventListener('transitionEnd', function(e) {self._onEndTransition(e);}, true);
             window.addEventListener('webkitTransitionEnd', function(e) {self._onEndTransition(e);}, true);
+            window.addEventListener('mozTransitionEnd', function(e) {self._onEndTransition(e);}, true);
         },
 
         _onEndTransition: function() {
+            this._stage.style.transition = '';
             this._stage.style.WebkitTransition = '';
+            this._stage.style.MozTransition = '';
             this._transitioning = false;
         },
 
@@ -86,7 +93,9 @@
             var x = this._inversion * (2 * e.clientX / window.innerWidth - 1.0) * this._range.x,
                 y = this._inversion * (2 * e.clientY / window.innerHeight - 1.0) * this._range.y;
 
+            this._stage.style.transform = 'translate3d(' + x + 'px,' + y + 'px, 0)';
             this._stage.style.WebkitTransform = 'translate3d(' + x + 'px,' + y + 'px, 0)';
+            this._stage.style.MozTransform = 'translate3d(' + x + 'px,' + y + 'px, 0)';
             this._lastCursor = {x: e.clientX, y: e.clientY};
         }
     };
