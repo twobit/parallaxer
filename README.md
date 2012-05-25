@@ -71,6 +71,11 @@ Requires CSS3 transform support. [When can I use CSS3 transforms?](http://canius
 
 Tested in WebKit and Firefox.
 
+## Who's Using It
+
+ * [Hypernaut](http://hypernaut.com)
+
 ## Todo
 
- * Set required CSS styles in JS
+ * Improve device motion support.
+ * Set required CSS styles in JS.
