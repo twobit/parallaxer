@@ -8,6 +8,7 @@
             y: opts.yRange || Parallaxer.Y_RANGE
         };
         this._inversion = opts.invert ? -1 : 1;
+        this._smoothing = opts.smoothing || false;
         this._transitioning = false;
         this._lastCursor = null;
 
@@ -77,16 +78,18 @@
         },
 
         _onMouseMove: function(e) {
-            if (!this._lastCursor) { // Transition to initial mouse coordinates
-                this._transition();
-            }
-            else if (!this._transitioning) {
-                var dx = e.clientX - this._lastCursor.x,
-                    dy = e.clientY - this._lastCursor.y;
-                
-                // Transition if distance between mouse events is large
-                if (dx * dx + dy * dy > Parallaxer.TRANSITION_DIST_SQ) {
+            if (this._smoothing) {
+                if (!this._lastCursor) { // Transition to initial mouse coordinates
                     this._transition();
+                }
+                else if (!this._transitioning) {
+                    var dx = e.clientX - this._lastCursor.x,
+                        dy = e.clientY - this._lastCursor.y;
+                    
+                    // Transition if distance between mouse events is large
+                    if (dx * dx + dy * dy > Parallaxer.TRANSITION_DIST_SQ) {
+                        this._transition();
+                    }
                 }
             }
 

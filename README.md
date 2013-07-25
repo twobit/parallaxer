@@ -58,6 +58,7 @@ __Arguments__
  * options.xRange - Maximum distance to scroll in x direction
  * options.yRange - Maximum distance to scroll in y direction
  * options.invert - Invert the direction of travel in both directions
+ * options.smoothing - Use transitions if distance between mouse coordinates is large (default false).
 
 __Example__
 
